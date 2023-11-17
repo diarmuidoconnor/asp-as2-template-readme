@@ -36,6 +36,7 @@ __Feature X__ - The user can ......
 
 1. Display the Favourite Movies page when no movies have been tagged.
 1. Submitting a Movie Review form when the user's name is blank.
+1. Other case X
 
 ### Cypress Custom commands (if relevant).
 
