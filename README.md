@@ -1,69 +1,67 @@
-# Assignment 1 - Agile Software Practice.
+# Assignment 2 - Agile Software Practice.
 
-__Name:__ ....your name .....
+Name: [your name] ...
 
-This repository contains the implementation of a React App, its associated Cypress tests and the GitLab CI pipeline.
+## API endpoints.
 
-## React App Features.
-
-[ Provide a bullet-point list of the __new features__ you added to the React Movies app, as well as any modifications to existing features).] e.g.
+[List the Web API's endpoints and state the purpose of each one. Indicate those that require authentication.]
  
-+ Feature 1
-+ Feature 2
-+ Feature 3
+ e.g.
+
++ GET api/movies/:id - get the details of a specific movie.
++ POST api/movies/:id/reviews (Auth) - Add a review for a movie.
++ GET api/movies?page=n&limit=m - Get m list of movies from TMDB's Discover endpoint, starting at page n and limit the list size to m.  
++ POST api/:userName/favourites (Auth) - add a movie to the named user's favourites list.
++ POST /api/users?action=action - Register or authenticate a user - set action to register or login. 
 + etc
 + etc
 
-## Automated Tests.
+## Automated Testing.
 
-### Unique functionality testing (if relevant).
+[In this section, include a listing of the response from running your tests locally (npm run test). Simply copy the output from your terminal and paste it into a fenced block (the triple tilda markup, i.e. ~~~ ), as shown below - do not use a screenshot.]
 
-[Briefly explain the parts of your app's  functionality that are unique and state the associated test file name.] 
+e.g. 
+~~~
+  Users endpoint
+    GET /api/users 
+      ✓ should return all the users and a status 200 (183ms)
+    POST /api/users 
+      For the register action
+        when the payload is correct
+          ✓ should return a 201 status and the confirmation message (368ms)
+      For the authenticate action
+        when the payload is correct
+          ✓ should return a 200 status and a generated token (340ms)
 
-e.g.
+  Movies endpoint
+    GET /api/movies 
+      ✓ should return 20 movies and a status 200 (113ms)
+    GET /api/movies/:id
+      when the id is valid
+        ✓ should return the matching movie (53ms)
+      when the id is invalid
+        ✓ should return the NOT found message (55ms)
 
-__Favourite Movie tagging__ - The user can tag movies as their favourite, and those selected are listed on a separate page.
 
-+ cypress/e2e/favourites.cy.js
+  6 passing (6s)
+~~~
 
-__Feature X__ - The user can ......
+[ Markdown Tip: By wrapping the test results in fences (~~~), GitHub will display it in a 'box' and preserve any formatting.]
 
-+ cypress/e2e/featureX.cy.js
+NOTE: Your test code should only contain the test cases you implemented. Your assignment submission  must remove the test cases (it blocks) developed in the labs.
 
-### Error/Exception testing (if relevant).
+## Deployments.
 
-[State the cases that demonstrate error and/or exception testing.]
+Specify the URLs of your deployments, both staging and production, e.g.
 
-1. Display the Favourite Movies page when no movies have been tagged.
-1. Submitting a Movie Review form when the user's name is blank.
-1. Other case X
+https://movies-api-staging-doc-9200283e0b04.herokuapp.com/api/movies
 
-### Cypress Custom commands (if relevant).
+[ I do NOT need the URL of the app on your Heroku dashboard as this is private, e.g.
 
-[ Specify the test file(s) that use a custom Cypress command(s) that you implemented.]
+https://dashboard.heroku.com/apps/movies-api-staging-doc ]
 
-e.g.
-+ cypress/e2e/filtering.cy.js
-+ cypress/e2e/favourites.cy.js
+## Independent Learning (if relevant)
 
-## Code Splitting.
+Sspecify the URL of the Coveralls webpage that contains your tests' code coverage metrics.
 
-[Specify the pathname of each source code file that contains evidence of code splitting in your React app.]
-
-e.g.
-+ src/index.js
-+ src/pages/favouriteMoviesPage.js
-+ src/components/movieCard/index.js
-
-## Pull Requests.
-
-[ Specify the URL of the GitHub repository that contains a record of the Pull Requests made during this assignment's code (source code or test code). If you used GitLab Merge Requests instead, then simply state this.]
-
-## Independent learning (If relevant).
-
-[ Briefly explain the work you did to satisfy the requirements of the Outstanding grade category, and include proof (e.g. screenshots) of its success. Also, mention the files that contain evidence of this work.
-
-![](./images/sample.png)
-
-State any other evidence of independent learning achieved while completing this assignment.
-
+State any other independent learning you achieved while completing this assignment.
